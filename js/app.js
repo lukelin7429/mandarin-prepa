@@ -10,6 +10,8 @@ import reading from './views/reading.js';
 import games from './views/games.js';
 import exam from './views/exam.js';
 import progress from './views/progress.js';
+import guide from './views/guide.js';
+import { maybeShowTour } from './tour.js';
 
 const routes = {
   '': [home, 'Mandarin Prépa', 'home'],
@@ -21,6 +23,7 @@ const routes = {
   jeux: [games, 'Jeux', 'home'],
   examen: [exam, 'Le concours', 'home'],
   progres: [progress, 'Progrès et réglages', 'home'],
+  guide: [guide, 'Mode d’emploi', 'home'],
 };
 
 const app = { content: null, vocabIndex: new Map() };
@@ -41,6 +44,7 @@ async function boot() {
   window.addEventListener('hashchange', route);
   document.getElementById('back').addEventListener('click', () => history.length > 1 ? history.back() : (location.hash = '#/'));
   route();
+  maybeShowTour();
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     navigator.serviceWorker.register('sw.js').catch(() => {});
   }
@@ -62,7 +66,7 @@ function route() {
   const el = document.getElementById('view');
   el.replaceChildren();
   // Views pass optional parts as `cond ? node : null`; skip the nulls.
-  const ok = (k) => k.filter((x) => x != null && x !== false);
+  const ok = (k) => k.flat(Infinity).filter((x) => x != null && x !== false);
   el.append = (...k) => Element.prototype.append.apply(el, ok(k));
   el.replaceChildren = (...k) => Element.prototype.replaceChildren.apply(el, ok(k));
   document.getElementById('title').textContent = title;

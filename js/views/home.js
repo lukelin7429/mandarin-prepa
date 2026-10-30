@@ -11,6 +11,7 @@ const MODULES = [
   ['#/jeux', '玩', 'Jeux', 'Tons, paires, phrases en désordre'],
   ['#/examen', '试', 'Le concours', 'Format des épreuves ECG (LV2)'],
   ['#/progres', '进', 'Progrès', 'Statistiques et réglages'],
+  ['#/guide', '？', 'Mode d’emploi', 'Comment utiliser l’application'],
 ];
 
 export default function home(el, { content }) {
@@ -30,7 +31,8 @@ export default function home(el, { content }) {
         h('div', { style: { textAlign: 'center' } }, h('b', { style: { fontSize: '26px' } }, st), h('div.small.muted', st > 1 ? 'jours de suite' : 'jour de suite'))),
       h('div.row', { style: { marginTop: '12px' } },
         h('a.btn.primary', { href: '#/cartes' }, due + fresh ? `Réviser (${due} à revoir · ${fresh} nouvelles)` : 'Cartes à jour ✓'),
-        h('a.btn', { href: `#/colle/${colle.id}` }, 'Colle du jour')),
+        h('a.btn', { href: `#/colle/${colle.id}` }, 'Colle du jour'),
+        h('a.btn.ghost', { href: '#/guide' }, '❓ Mode d’emploi')),
     ),
     h('div.grid', MODULES.map(([href, ico, name, desc]) =>
       h('a.tile', { href }, h('div.big', ico), h('b', name), h('span', desc)))),

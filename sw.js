@@ -1,10 +1,11 @@
 // Offline support: app shell cached first, content refreshed from the network when possible.
-const VERSION = 'mp-v1';
+const VERSION = 'mp-v2';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'css/app.css',
   'js/app.js', 'js/store.js', 'js/speech.js', 'js/srs.js', 'js/ui.js', 'js/practice.js', 'js/sentences.js',
   'js/views/home.js', 'js/views/cards.js', 'js/views/listen.js', 'js/views/oral.js', 'js/views/colle.js',
   'js/views/reading.js', 'js/views/games.js', 'js/views/exam.js', 'js/views/progress.js',
+  'js/views/guide.js', 'js/tour.js',
   'content/content.json', 'content/pinyin-map.json', 'audio/index.json',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png',
 ];
