@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mandarin Prépa</title>
+  <meta name="description" content="Application de chinois pour préparer les concours des écoles de commerce (ECG, LV2).">
+  <meta name="theme-color" content="#c8102e">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Mandarin">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="back" id="back" aria-label="Retour" hidden>‹</button>
+    <h1 id="title">Mandarin Prépa</h1>
+  </header>
+  <main id="view" aria-live="polite"><p class="muted">Chargement…</p></main>
+  <nav class="tabbar" id="tabbar">
+    <a href="#/" data-tab="home"><span class="ico">家</span>Accueil</a>
+    <a href="#/cartes" data-tab="cartes"><span class="ico">卡</span>Cartes</a>
+    <a href="#/oral" data-tab="oral"><span class="ico">说</span>Oral</a>
+    <a href="#/colle" data-tab="colle"><span class="ico">考</span>Colle</a>
+    <a href="#/lecture" data-tab="lecture"><span class="ico">读</span>Lecture</a>
+  </nav>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
