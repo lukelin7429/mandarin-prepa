@@ -7,11 +7,12 @@ import { log } from '../store.js';
 const STAGE_FR = { intro: 'Introduction', synthese: 'Synthèse', commentaire: 'Commentaire', conclusion: 'Conclusion', entretien: 'Entretien' };
 
 export default function oral(el, { content }) {
-  let mode = 'phrases';
+  let mode = 'soigner';
   let cleanups = [];
   const clean = () => { cleanups.forEach((f) => f()); cleanups = []; };
 
   const lists = {
+    soigner: () => content.drills.map((d) => ({ tokens: d.ex, fr: `${d.w} ${d.p} : ${d.fr}`, tag: 'Mot à soigner', word: d.w })),
     phrases: () => content.phrases.map((p) => ({ tokens: p.zh, fr: p.fr, tag: STAGE_FR[p.stage] })),
     mots: () => shuffle(content.vocab).slice(0, 30).map((v) => ({ tokens: [{ w: v.h, p: v.p }], fr: v.fr })),
     textes: () => shuffle(sentences(content, { max: 30 })).slice(0, 30).map((s) => ({ tokens: s.tokens, fr: null, tag: s.title_fr })),
@@ -20,7 +21,7 @@ export default function oral(el, { content }) {
   function top() {
     return h('div.card',
       h('p.small.muted', 'Pour gagner en assurance : écoute le modèle, répète à voix haute, puis enregistre-toi. Parle fort, même si tu te trompes.'),
-      seg([['phrases', 'Phrases de colle'], ['mots', 'Mots'], ['textes', 'Phrases des textes'], ['minute', 'Une minute pour répondre']], mode,
+      seg([['soigner', 'Mots à soigner'], ['phrases', 'Phrases de colle'], ['mots', 'Mots'], ['textes', 'Phrases des textes'], ['minute', 'Une minute pour répondre']], mode,
         (m) => { mode = m; draw(); }));
   }
 
@@ -40,6 +41,7 @@ export default function oral(el, { content }) {
         h('div.row.spread.small.muted', h('span', it.tag || ''), h('span', `${i + 1} / ${items.length}`)),
         h('div.text-zh.pinyin-on', { lang: 'zh-CN', style: { fontSize: it.tokens.length === 1 ? '40px' : '22px' } }, renderTokens(it.tokens, { mode: 'on' })),
         it.fr ? h('p', it.fr) : null,
+        it.word ? h('div.row', h('button.btn.small', { onclick: () => speak(it.word, { rate: 0.6 }) }, `🐢 ${it.word}`)) : null,
         pc,
         h('div.row.spread',
           h('button.btn.small', { disabled: i === 0, onclick: () => { i--; show(); } }, '← Précédent'),

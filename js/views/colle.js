@@ -14,6 +14,14 @@ const FORMATS = {
   },
 };
 
+// Grid used for class colles.
+const CRITERIA_CLASSE = [
+  ['prononciation', 'Prononciation (tons, syllabes)'],
+  ['syntaxe', 'Syntaxe (ordre des mots, phrases complètes)'],
+  ['lexique', 'Richesse lexicale (le mot juste)'],
+  ['contenu', 'Contenu et cohérence'],
+];
+
 const CRITERIA = [
   ['synthese', 'Capacité de synthèse (pas de paraphrase)'],
   ['commentaire', 'Pertinence du commentaire (lien avec le texte)'],
@@ -121,7 +129,7 @@ export default function colle(el, { content, params, vocabIndex }) {
     return h('details.card',
       h('summary', 'Méthode (conseils des rapports du jury HEC)'),
       h('h3', '1. Synthèse (2 à 3 min)'),
-      h('p.small', 'Présente le titre, la source et le thème. Dégage l’idée principale et 2 ou 3 axes. Reformule avec tes mots : le jury pénalise la paraphrase et les plans scolaires du type « la première partie dit que… ». Cite les chiffres exacts du texte, sans en inventer.'),
+      h('p.small', 'Commence par une phrase qui résume tout (这篇文章说的是…), puis ne suis pas l’ordre du texte. Présente le titre, la source et le thème. Dégage l’idée principale et 2 ou 3 axes. Reformule avec tes mots : le jury pénalise la paraphrase et les plans scolaires du type « la première partie dit que… ». Cite les chiffres exacts du texte, sans en inventer.'),
       h('h3', '2. Commentaire (4 à 5 min)'),
       h('p.small', 'Pose une problématique liée directement à l’article. Deux arguments, des exemples (Chine, Taïwan, France). Si tu réutilises un sujet vu en cours, ajoute des phrases de transition qui le relient au texte.'),
       h('h3', '3. Entretien (6 à 7 min)'),
@@ -233,7 +241,7 @@ export default function colle(el, { content, params, vocabIndex }) {
     const url = blob ? URL.createObjectURL(blob) : null;
     cleanup.push(() => url && URL.revokeObjectURL(url));
     const self = {};
-    const sliders = CRITERIA.map(([k, label]) => {
+    const sliders = (settings.colleFormat === 'classe' ? CRITERIA_CLASSE : CRITERIA).map(([k, label]) => {
       self[k] = 3;
       const out = h('b', '3/5');
       return h('label.field', label, ' ', out,
@@ -252,7 +260,7 @@ export default function colle(el, { content, params, vocabIndex }) {
         h('p.small.muted', 'L’enregistrement n’est gardé que sur cet appareil. Télécharge-le si tu veux le garder ou l’envoyer à ton professeur.'),
         h('button.btn', { onclick: () => download(blob, `colle-${c.id}-${new Date().toISOString().slice(0, 10)}.${blob.type.includes('mp4') ? 'm4a' : 'webm'}`) }, '⬇ Télécharger')) : null,
       h('div.card.stack', h('h2', 'Auto-évaluation'),
-        h('p.small.muted', 'Les quatre critères des rapports du jury. Réécoute-toi avant de noter.'),
+        h('p.small.muted', 'Réécoute-toi avant de noter.'),
         sliders,
         h('button.btn.primary', { onclick: () => { entry.self = { ...self }; save(); toast('Auto-évaluation enregistrée'); location.hash = '#/colle'; } }, 'Enregistrer')),
       h('div.card', h('h2', 'Le document'),

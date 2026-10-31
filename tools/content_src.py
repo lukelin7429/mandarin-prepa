@@ -17,23 +17,43 @@ and run:  python3 tools/build_content.py
 TEXTS = [
     {
         "id": "gaokao",
-        "title": "高考：一场 改变 命运 的 考试？",
-        "title_fr": "Le gaokao : un examen qui change une vie ?",
-        "note_fr": "Texte de démonstration (niveau HSK 4-5), à remplacer par l'article étudié en classe.",
+        "title": "高考：一个 人 考试，全家 一起 累",
+        "title_fr": "Le gaokao : un seul candidat, toute la famille épuisée",
+        "note_fr": "Texte réécrit pour l'application, sur le thème étudié en classe, avec le vocabulaire de l'article du cours.",
         "body": """
-每年 六月 七日 和 八日 ， 一千 多 万 中国 高中生 走进 考场=salle d'examen ， 参加=participer 全国 高等 学校 招生=admission (recrutement d'étudiants) 考试 ， 也 就是 “ 高考=gaokao (concours d'entrée à l'université) ” 。 对 很多 家庭 来说 ， 高考 不 只是 一 场 考试 ， 而是 决定=décider 孩子 未来=avenir 的 关键=clé, décisif 时刻=moment 。
+每年 六月 ， 中国 好像 进入=entrer dans 了 “ 紧急状态=état d'urgence ” 。 两 天 的 高考=gaokao (concours d'entrée à l'université) ， 对 近 一千万 年轻人 来说 ， 是 一生 中 最 重要 的 日子 ， 因为 考试 的 分数=note, score 决定=décider 他们 的 未来=avenir 。
 
-高考 的 分数=note, score 几乎=presque 决定 学生 能 上 哪 所 大学 。 好 大学 意味着=signifier, impliquer 好 工作 ， 好 工作 意味着 更 高 的 收入=revenu 和 社会 地位=statut 。 所以 很多 学生 从 小学 开始 就 上 补习班=cours de soutien privé ， 高三=terminale (3e année de lycée) 的 时候 每天 学习 十 几 个 小时 ， 周末 也 很少 休息 。
+为了 这 两 天 ， 学生们 努力=faire des efforts 学习 了 很多 年 。 他们 牺牲=sacrifier 了 童年=enfance 、 周末 和 假期 ， 还 要 忍受=supporter, endurer 睡眠不足=manque de sommeil 。 到 了 高三=terminale (3e année de lycée) ， 这个 问题 变得=devenir 更 严重=grave ： 很多 学生 从 早上 六 点 一直=sans arrêt 学习 到 半夜 ， 非常 辛苦=pénible, dur 。
 
-支持=soutenir 高考 的 人 认为=estimer, penser ， 这 是 一 种 相对=relativement 公平=équitable 的 制度=système, institution ： 不管=quel que soit 家庭 背景=milieu, contexte 如何 ， 只要=pourvu que 努力 学习 ， 农村=campagne, zone rurale 的 孩子 也 有 机会 考上 名牌大学=université prestigieuse 。 反对=s'opposer à 的 人 则 认为 ， 高考 给 学生 带来 了 巨大=énorme 的 压力=pression ， 让 教育 变成 了 “ 应试教育=éducation tournée vers les examens ” ， 学生 只 会 背书@bèishū=apprendre par cœur 和 做题 ， 缺少=manquer de 创造力=créativité 。
+全家人 也 跟着 受累=se fatiguer pour quelqu'un 。 父母 给 孩子 喝 鸡汤=bouillon de poulet ， 吃 药丸=pilule 和 滋补品=fortifiant 。 考试 的 时候 ， 警察=police 封锁=bloquer 考场=salle d'examen 周围=autour 的 街道 ， 为 考生=candidat 创造=créer 安静=calme 的 环境=environnement 。 整个 国家 都 很 兴奋=excité 。
 
-近年来 ， 中国 政府=gouvernement 推出 了 一些 改革=réforme ， 比如 减少=réduire 作业 、 限制=limiter 校外 培训 机构=organisme ， 希望 减轻=alléger 学生 的 负担=charge, fardeau 。 可是 ， 只要 好 大学 的 名额=nombre de places 有限=limité ， 竞争=concurrence 就 不 会 消失=disparaître 。 高考 到底=au fond, finalement 是 改变 命运=destin 的 机会 ， 还是 压 在 年轻人 身上 的 一 座 大山 ？ 这个 问题 仍然=toujours, encore 没有 简单 的 答案 。
+父母 常常 告诉 孩子 ： 多 考 几 分 ， 就 意味着=signifier, impliquer 更 好 的 大学 、 更 好 的 工作 、 更 大 的 房子 ， 甚至=même 更 好 的 结婚 对象=partenaire 。 可是 ， 对 很多 学生 来说 ， 这样 的 学习 就 像 一 场 噩梦=cauchemar 。 考完 以后 ， 有些 学生 把 课本 撕成=déchirer en 碎片=morceaux 来 减压=évacuer le stress 。 后来 ， 有的 地方 禁止=interdire 了 这 种 做法 ， 要求 学校 给 学生 提供=offrir, fournir 心理辅导=soutien psychologique 。
 """,
         "quiz": [
-            {"q": "Quand le gaokao a-t-il lieu ?", "a": "Les 7 et 8 juin", "wrong": ["En septembre", "Les 1er et 2 janvier", "Chaque samedi"]},
-            {"q": "Selon ses partisans, le gaokao est…", "a": "un système relativement équitable", "wrong": ["un examen trop facile", "réservé aux enfants des villes", "inutile pour trouver un emploi"]},
-            {"q": "Que reprochent ses opposants au gaokao ?", "a": "Il crée une forte pression et étouffe la créativité", "wrong": ["Il coûte trop cher aux familles", "Il est organisé trop souvent", "Il ne concerne que les maths"]},
-            {"q": "Pourquoi la concurrence ne disparaîtra-t-elle pas ?", "a": "Les places dans les bonnes universités sont limitées", "wrong": ["Le gouvernement interdit les réformes", "Les élèves aiment la compétition", "Les universités sont gratuites"]},
+            {"q": "Combien de jeunes passent le gaokao chaque année ?", "a": "Près de 10 millions", "wrong": ["Près d'un million", "Près de 100 000", "Près de 100 millions"]},
+            {"q": "Que sacrifient les élèves ?", "a": "Leur enfance, leurs week-ends et leurs vacances", "wrong": ["Leur argent de poche", "Leurs études universitaires", "Leur travail"]},
+            {"q": "Que font les policiers pendant l'examen ?", "a": "Ils bloquent les rues autour des salles d'examen", "wrong": ["Ils surveillent les copies", "Ils accompagnent les parents", "Ils distribuent les sujets"]},
+            {"q": "Que signifient « quelques points de plus » pour les parents ?", "a": "Une meilleure université, un meilleur travail, une vie meilleure", "wrong": ["Des vacances plus longues", "Moins de pression", "Un voyage à l'étranger"]},
+        ],
+    },
+    {
+        "id": "buxiban",
+        "title": "补习班：好 成绩 是 唯一 的 标准 吗？",
+        "title_fr": "Les cours de soutien : les notes sont-elles le seul critère ?",
+        "note_fr": "Texte réécrit pour l'application, sur le thème étudié en classe, avec le vocabulaire de l'article du cours.",
+        "body": """
+2021 年 ， 为了 减轻=alléger 学生 的 负担=charge, fardeau ， 中国 禁止 了 很多 课外 补习班=cours de soutien privé ， 许多 教育 机构=organisme, structure 都 倒闭=faire faillite 了 。
+
+可是 ， 家长们 非常 焦虑=angoissé 。 他们 认为 ， 要 考上 好 大学 ， 成绩=résultats scolaires 必须 优异=excellent ， 所以 花 再 多 钱 也 愿意 。 有 需求=demande, besoin ， 就 有 市场=marché 。 于是 ， 出现=apparaître 了 新 的 补课 方式 ， 比如 直播=en direct 教师 ， 很 受 家长 欢迎=être apprécié 。
+
+实际上=en réalité ， 真正 能 帮助 学生 的 人 是 他们 自己 。 在 传统=tradition, traditionnel 的 教育 观念=mentalité 里 ， 分数 好 就是 好 学生 。 但是 ， 成绩 并 不是 成功 的 唯一=unique 标准=critère 。 有些 学生 成绩 不 理想 ， 却 可以 靠 自己 的 技能=compétence 获得 成功 。
+
+所以 ， 家长 不 应该 强迫=forcer 孩子 学习 ， 也 不 能 只 看 分数 而 忽视=négliger 孩子 的 身体 健康 。 只有 对 学习 感兴趣 ， 学生 才 会 真正 努力 。
+""",
+        "quiz": [
+            {"q": "Que s'est-il passé en 2021 ?", "a": "La Chine a interdit de nombreux cours de soutien", "wrong": ["Le gaokao a été supprimé", "Les écoles ont fermé", "Les cours sont devenus gratuits"]},
+            {"q": "Comment ont réagi les parents ?", "a": "Ils étaient très angoissés", "wrong": ["Ils étaient soulagés", "Ils ont manifesté", "Ils n'ont rien remarqué"]},
+            {"q": "Selon le texte, qui peut vraiment aider les élèves ?", "a": "Eux-mêmes", "wrong": ["Les professeurs en direct", "Le gouvernement", "Les organismes privés"]},
         ],
     },
     {
@@ -69,6 +89,34 @@ TEXTS = [
 # (2023-2025): society topics from mainland China and Taiwan.
 # ---------------------------------------------------------------------------
 COLLES = [
+    {
+        "id": "gaokao-colle",
+        "from_text": "gaokao",
+        "title": "高考：一个 人 考试，全家 一起 累",
+        "title_fr": "Le gaokao (texte de ta colle)",
+        "questions": [
+            {"zh": "你 觉得 高考 公平 吗 ？ 为什么 ？", "fr": "Trouves-tu le gaokao équitable ? Pourquoi ?"},
+            {"zh": "高考 给 学生 带来 了 什么 影响 ？", "fr": "Quelles conséquences le gaokao a-t-il sur les élèves ?"},
+            {"zh": "和 法国 的 高中 会考 相比 ， 高考 有 什么 不同 ？", "fr": "Par rapport au baccalauréat français, en quoi le gaokao est-il différent ?"},
+        ],
+    },
+    {
+        "id": "aipeiban",
+        "title": "人工智能 陪伴 ： 机器 能 代替 朋友 吗 ？",
+        "title_fr": "Compagnons IA : une machine peut-elle remplacer un ami ?",
+        "body": """
+在 中国 ， 越来越多 的 年轻人 开始 和 人工智能 聊天 。 有的 人 买 会 说话 的 机器 宠物=animal de compagnie ， 有的 人 用 手机 上 的 “ 虚拟=virtuel 朋友 ” 。 他们 说 ， 机器 不 会 批评 自己 ， 随时=à tout moment 都 能 陪伴 自己 。
+
+专家 指出 ， 这 和 独生子女=enfant unique 政策 有 关系 。 很多 年轻人 没有 兄弟姐妹 ， 工作 压力 又 大 ， 很 难 交=se faire (des amis) 朋友 ， 所以 感到 孤独 。
+
+不过 ， 也 有 人 担心 ， 孩子 太 依赖=dépendre de 人工智能 ， 会 失去 独立=indépendant 思考 的 能力 ， 也 不 会 和 真人 交流=communiquer 。 还有 家长 担心 孩子 的 隐私=vie privée 。 人工智能 到底 是 好 朋友 ， 还是 新 的 问题 ？
+""",
+        "questions": [
+            {"zh": "你 在 生活 中 怎么 使用 人工智能 ？", "fr": "Comment utilises-tu l'intelligence artificielle dans ta vie ?"},
+            {"zh": "机器 能 代替 真 朋友 吗 ？ 为什么 ？", "fr": "Une machine peut-elle remplacer un vrai ami ? Pourquoi ?"},
+            {"zh": "独生子女 政策 对 中国 社会 有 什么 影响 ？", "fr": "Quel impact la politique de l'enfant unique a-t-elle sur la société chinoise ?"},
+        ],
+    },
     {
         "id": "neijuan",
         "title": "“ 内卷 ” 还是 “ 躺平 ” ？",
@@ -179,6 +227,10 @@ PHRASES = [
     ("intro", "我 今天 要 介绍 的 文章 题目 是 《 … 》 ， 发表 在 … 上 。", "L'article que je vais présenter s'intitule « … », publié dans …"),
     ("intro", "这 篇 文章 主要 讲 的 是 …", "Cet article traite principalement de …"),
     ("intro", "这 篇 文章 讨论 了 一 个 很 有 意思 的 社会 现象 。", "Cet article aborde un phénomène de société très intéressant."),
+    ("synthese", "这 篇 文章 说 的 是 高考 给 中国人 带来 的 影响 。", "Cet article parle des conséquences du gaokao pour les Chinois."),
+    ("synthese", "这 给 学生 带来 了 很 大 的 压力 。", "Cela impose une forte pression aux élèves."),
+    ("synthese", "这 使 学生 失去 了 自己 的 时间 。", "Cela fait perdre aux élèves leur temps libre."),
+    ("synthese", "各个 大学 根据 分数 录取 考生 。", "Chaque université recrute les candidats selon leurs notes."),
     ("synthese", "文章 分析 了 … 的 原因 和 影响 。", "L'article analyse les causes et les conséquences de …"),
     ("synthese", "首先 ， … 其次 ， … 最后 ， …", "D'abord, … ensuite, … enfin, …"),
     ("synthese", "一方面 ， … ； 另一方面 ， …", "D'un côté, … ; de l'autre, …"),
@@ -204,6 +256,21 @@ PHRASES = [
 # (hanzi with spaces between words if needed, pinyin override or "", French)
 # ---------------------------------------------------------------------------
 EXTRA_VOCAB = [
+    ("影响", "", "influence ; influencer"),
+    ("录取", "", "admettre, recruter (une université)"),
+    ("根据", "", "selon, d'après"),
+    ("然而", "", "cependant"),
+    ("使", "", "rendre, faire que"),
+    ("另外", "", "en outre, par ailleurs"),
+    ("办法", "", "solution, moyen"),
+    ("机会", "", "occasion, opportunité"),
+    ("请家教", "qǐng jiājiào", "prendre des cours particuliers"),
+    ("报补习班", "bào bǔxíbān", "s'inscrire à des cours de soutien"),
+    ("望子成龙", "", "espérer que son fils réussisse brillamment"),
+    ("望女成凤", "", "espérer que sa fille réussisse brillamment"),
+    ("虎爸虎妈", "", "parents très exigeants (« parents tigres »)"),
+    ("重点中学", "", "lycée d'élite"),
+    ("上课外班", "", "suivre des cours supplémentaires"),
     ("经济", "", "économie"),
     ("发展", "", "développement, se développer"),
     ("企业", "", "entreprise"),
@@ -256,4 +323,91 @@ TONE_WORDS = [
     ("书", "livre"), ("房", "logement"), ("懂", "comprendre"), ("累", "fatigué"),
     ("哥", "grand frère"), ("鱼", "poisson"), ("雨", "pluie"), ("路", "route"),
     ("风", "vent"), ("人", "personne"), ("手", "main"), ("树", "arbre"),
+]
+
+
+# ---------------------------------------------------------------------------
+# Words that deserve extra pronunciation work: (word, note, example sentence)
+# ---------------------------------------------------------------------------
+DRILLS = [
+    ("全", "tout, entier (attention : pas « kuan »)", "全 家 人 都 很 累 。"),
+    ("消息", "nouvelle, information", "这 是 一 个 好 消息 。"),
+    ("进入", "entrer dans", "中国 进入 了 紧急状态 。"),
+    ("轻", "léger", "我 想 减轻 学生 的 负担 。"),
+    ("重", "lourd, important", "高考 非常 重要 。"),
+    ("场", "classificateur (examen, match)", "这 是 一 场 重要 的 考试 。"),
+    ("将", "va, sera (écrit)", "这 场 考试 将 决定 学生 的 未来 。"),
+    ("这", "ce, cette", "这 个 问题 很 难 。"),
+    ("一直", "sans arrêt, tout le temps", "她 一直 在 学习 。"),
+    ("努力", "faire des efforts", "学生们 努力 学习 。"),
+    ("学习", "étudier", "学习 是 一 件 快乐 的 事情 。"),
+    ("童年", "enfance", "他们 牺牲 了 童年 。"),
+    ("夜", "nuit", "很多 学生 学习 到 半夜 。"),
+    ("问题", "problème, question", "这个 问题 变得 更 严重 了 。"),
+    ("变得", "devenir", "生活 变得 更 难 了 。"),
+    ("更", "encore plus", "多 考 几 分 ， 就 有 更 好 的 大学 。"),
+    ("严重", "grave", "这个 问题 很 严重 。"),
+    ("地", "de : après un adverbe", "他们 辛苦 地 学习 。"),
+]
+
+# ---------------------------------------------------------------------------
+# Usage traps: (sentence with ＿, right answer, wrong answers, explanation)
+# ---------------------------------------------------------------------------
+USAGE = [
+    ("我 有 ＿ 个 姐姐 。", "两", ["二"], "Pour une quantité : 两. Pour un numéro ou une date : 二."),
+    ("高考 考 ＿ 天 。", "两", ["二"], "Une durée se compte avec 两."),
+    ("今天 是 十月 ＿ 号 。", "二", ["两"], "Une date s'écrit avec 二."),
+    ("他 的 房间 是 ＿ 零 五 号 。", "二", ["两"], "Un numéro se lit avec 二."),
+    ("很多 家长 给 孩子 ＿ 补习班 。", "报", ["做"], "On dit 报补习班 (s'inscrire), jamais 做补习班."),
+    ("有钱 的 家庭 常常 ＿ 家教 。", "请", ["做", "报"], "请家教 : prendre un professeur particulier."),
+    ("父母 ＿ 孩子 喝 鸡汤 。", "给", ["跟", "在"], "给 gěi : donner, pour quelqu'un."),
+    ("好 大学 意味着 ＿ 多 的 机会 。", "更", ["很"], "更 gèng : encore plus (comparaison)."),
+    ("减轻 压力 的 ＿ 有 很多 。", "办法", ["机会"], "办法 bànfǎ : solution. 机会 jīhuì : occasion."),
+    ("老师 说 ： 你 要 ＿ ！", "努力学习", ["学习努力"], "努力学习 : conseil, ordre (« travaille bien »)."),
+    ("他 ＿ ， 每天 都 看书 。", "学习努力", ["努力学习"], "学习努力 : constat (« il est travailleur »)."),
+    ("学生们 辛苦 ＿ 学习 。", "地", ["的", "得"], "Devant un verbe : 地 (de)."),
+    ("高考 ＿ 学生 带来 了 很 大 的 压力 。", "给", ["对"], "给…带来 : apporter à quelqu'un."),
+    ("高考 ＿ 中国人 的 影响 很 大 。", "对", ["给"], "对…的影响 : l'influence sur quelque chose."),
+    ("高考 ＿ 学生 失去 了 自己 的 时间 。", "使", ["首先"], "使 : rendre, faire que. 首先 : tout d'abord."),
+    ("高考 很 公平 。 ＿ ， 它 也 给 学生 很 大 的 压力 。", "然而", ["首先"], "然而 oppose deux idées. 首先 ouvre une énumération."),
+    ("分数 决定 未来 。 ＿ ， 学生们 都 很 努力 。", "因此", ["然而"], "因此 : par conséquent."),
+    ("下课 以后 ， 除了 做 作业 ＿ 是 上 补习班 。", "就", ["才"], "除了…就 : à part…, il ne reste que…"),
+    ("早上 八 点 上课 ， 下午 四 点 ＿ 放学 。", "才", ["就"], "才 : seulement (plus tard que prévu)."),
+    ("＿ 不 努力 ， 就 考不上 好 大学 。", "要是", ["虽然"], "要是…就 : si… alors (oral)."),
+]
+
+# ---------------------------------------------------------------------------
+# Written practice, in the format of the BCE and Ecricome papers
+# ---------------------------------------------------------------------------
+WRITING = [
+    {"id": "res1", "kind": "resume", "target": 250, "docs": ["gaokao", "buxiban"],
+     "q": "这 两 篇 文章 中 ， 学生 的 压力 来自 哪里 ？ 家长 有 什么 不同 的 做法 ？",
+     "fr": "D'où vient la pression des élèves dans ces deux textes ? Quels comportements des parents sont décrits ?"},
+    {"id": "res2", "kind": "resume", "target": 250, "docs": ["neijuan", "aipeiban"],
+     "q": "这 两 篇 文章 中 的 年轻人 有 哪些 问题 ？ 他们 分别 怎么 面对 ？",
+     "fr": "Quels problèmes ont les jeunes de ces deux textes ? Comment y font-ils face ?"},
+    {"id": "ess1", "kind": "essai", "target": 350,
+     "q": "你 认为 使用 人工智能 会 让 学生 不 再 独立 思考 吗 ？ 请 举例 说明 。",
+     "fr": "Penses-tu que l'IA empêche les élèves de penser par eux-mêmes ? Donne des exemples."},
+    {"id": "ess2", "kind": "essai", "target": 350,
+     "q": "成绩 是 成功 的 唯一 标准 吗 ？ 请 举例 说明 。",
+     "fr": "Les notes sont-elles le seul critère de réussite ? Donne des exemples."},
+    {"id": "ess3", "kind": "essai", "target": 350,
+     "q": "你 认为 高考 公平 吗 ？ 请 和 法国 比较 。",
+     "fr": "Le gaokao te semble-t-il équitable ? Compare avec la France."},
+    {"id": "th1", "kind": "theme",
+     "src": "En Chine, beaucoup de parents inscrivent leurs enfants à des cours de soutien, car ils ont peur qu'ils prennent du retard. Pourtant, les notes ne sont pas le seul critère de réussite.",
+     "model": "在 中国 ， 很多 家长 给 孩子 报 补习班 ， 因为 他们 怕 孩子 落后 。 然而 ， 成绩 并 不是 成功 的 唯一 标准 。"},
+    {"id": "th2", "kind": "theme",
+     "src": "Pendant les deux jours du gaokao, la police bloque les rues autour des salles d'examen afin de créer un environnement calme pour les candidats.",
+     "model": "高考 的 两 天 里 ， 警察 封锁 考场 周围 的 街道 ， 为 考生 创造 安静 的 环境 。"},
+    {"id": "th3", "kind": "theme",
+     "src": "Les jeunes d'aujourd'hui ont peu de temps pour leurs amis, car la concurrence au travail est forte. C'est pourquoi certains cherchent de la compagnie auprès de l'intelligence artificielle.",
+     "model": "现在 的 年轻人 陪 朋友 的 时间 很 少 ， 因为 工作 竞争 很 激烈 。 因此 ， 有些 人 开始 用 人工智能 陪伴 自己 。"},
+    {"id": "ve1", "kind": "version",
+     "zh": "很多 大学生 毕业 以后 找不到 满意 的 工作 。 有些 人 回到 父母 家 ， 帮 父母 做饭 、 打扫 ， 父母 每 个 月 给 他们 工资 。",
+     "model": "Beaucoup d'étudiants ne trouvent pas d'emploi satisfaisant après leur diplôme. Certains retournent chez leurs parents, font la cuisine et le ménage, et reçoivent chaque mois un salaire de leur part."},
+    {"id": "ve2", "kind": "version",
+     "zh": "十一月 十一 日 是 中国 最 大 的 购物节 。 这 一 天 ， 消费者 在 网上 买 很多 东西 ， 因为 价格 比较 便宜 。 不过 ， 有些 人 买 了 以后 才 发现 自己 并 不 需要 。",
+     "model": "Le 11 novembre est la plus grande fête du shopping en Chine. Ce jour-là, les consommateurs achètent beaucoup en ligne, car les prix sont plutôt bas. Pourtant, certains se rendent compte après coup qu'ils n'en avaient pas besoin."},
 ]

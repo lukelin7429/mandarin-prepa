@@ -6,6 +6,7 @@ import { dueList, newList, grade, preview, deckStats } from '../srs.js';
 const DECKS = [
   ['all', 'Tout'],
   ['gaokao', '高考'],
+  ['buxiban', '补习班'],
   ['peterpan', 'Peter Pan'],
   ['colles', 'Colles'],
   ['theme', 'Thèmes'],

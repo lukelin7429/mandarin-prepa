@@ -3,7 +3,7 @@ import { speak, stopSpeaking } from '../speech.js';
 import { S, save, log, dayKey } from '../store.js';
 
 export default function reading(el, { content, params, vocabIndex, setTitle }) {
-  const docs = [...content.texts.map((t) => ({ ...t, kind: 'Texte' })), ...content.colles.map((c) => ({ ...c, kind: 'Document de colle' }))];
+  const docs = [...content.texts.map((t) => ({ ...t, kind: 'Texte' })), ...content.colles.filter((c) => !c.from_text).map((c) => ({ ...c, kind: 'Document de colle' }))];
   const doc = params[0] && docs.find((d) => d.id === params[0]);
   if (!doc) return list();
   setTitle(doc.title_fr);
@@ -13,7 +13,7 @@ export default function reading(el, { content, params, vocabIndex, setTitle }) {
     el.replaceChildren(
       h('p.small.muted', 'Touche un mot pour voir son pinyin et sa traduction. Les mots soulignés en pointillé font partie de tes cartes.'),
       ...['Texte', 'Document de colle'].map((kind) => h('div.card',
-        h('h2', kind === 'Texte' ? 'Textes du cours (démonstration)' : 'Documents de colle'),
+        h('h2', kind === 'Texte' ? 'Textes' : 'Documents de colle'),
         docs.filter((d) => d.kind === kind).map((d) => h('a.row.spread', {
           href: `#/lecture/${d.id}`,
           style: { padding: '10px 0', borderBottom: '1px solid var(--line)', textDecoration: 'none', color: 'inherit' },

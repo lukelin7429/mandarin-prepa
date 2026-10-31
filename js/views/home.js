@@ -7,6 +7,7 @@ const MODULES = [
   ['#/ecoute', '听', 'Écoute', 'Comprendre la langue parlée'],
   ['#/oral', '说', 'Oral', 'Prononcer, s’enregistrer, gagner en assurance'],
   ['#/colle', '考', 'Colle', '20 min de préparation, puis l’oral'],
+  ['#/ecrit', '写', 'Écrit', 'Résumé, essai, thème, version'],
   ['#/lecture', '读', 'Lecture', 'Textes avec pinyin et lexique'],
   ['#/jeux', '玩', 'Jeux', 'Tons, paires, phrases en désordre'],
   ['#/examen', '试', 'Le concours', 'Format des épreuves ECG (LV2)'],
@@ -39,6 +40,6 @@ export default function home(el, { content }) {
     lastColle ? h('p.small.muted', { style: { marginTop: '14px' } },
       `Dernière colle : « ${lastColle.title_fr} » le ${new Date(lastColle.date).toLocaleDateString('fr-FR')}.`) : null,
     h('p.small.muted', { style: { marginTop: '14px' } },
-      'Contenu de démonstration. Les textes du cours remplaceront ces exemples dès qu’ils seront disponibles.'),
+      'Textes réécrits à partir des thèmes du cours et du concours.'),
   );
 }

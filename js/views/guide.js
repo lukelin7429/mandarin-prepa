@@ -8,6 +8,7 @@ const FEATURES = [
     '10 nouveaux mots par jour au maximum (réglable dans Progrès). Essaie aussi les sens « FR → 中 » et « 🔊 → sens ».',
   ]],
   ['oral', '#/oral', 'Oral', 'Ton point faible, à travailler un peu chaque jour pour prendre de l’assurance.', [
+    '« Mots à soigner » : les mots les plus difficiles à prononcer, à travailler en premier.',
     '« 🔊 Modèle » fait entendre une voix naturelle ; « 🐢 Lent » la ralentit. Répète à voix haute.',
     '« 🎙 Prononcer » : parle, et l’application colore chaque caractère. Vert = bien prononcé, orange = vérifie le ton, rouge = pas reconnu.',
     '« ● M’enregistrer » puis « Modèle puis ma voix » pour comparer. « Une minute pour répondre » : réponds à une question du jury sans t’arrêter.',
@@ -22,12 +23,18 @@ const FEATURES = [
     'Touche « Passer à l’oral » : synthèse (2-3 min), commentaire (4-5 min), puis les questions du jury, lues à voix haute. Tout est enregistré.',
     'À la fin : ton minutage partie par partie, ton enregistrement à réécouter (et à télécharger pour ton professeur) et une auto-évaluation sur les 4 critères du jury.',
   ]],
+  ['ecrit', '#/ecrit', 'Écrit', 'Les quatre exercices des concours BCE et Ecricome.', [
+    'Résumé (250 caractères) et essai (350 caractères) : écris dans la zone de texte, le compteur t’indique si tu es dans la marge de ±10 %. Ton brouillon est gardé sur ton appareil.',
+    'Thème et version : traduis, puis compare avec un modèle.',
+    'Commence par le thème et la version : ce sont les exercices les plus courts.',
+  ]],
   ['lecture', '#/lecture', 'Lecture', 'Les articles du cours, avec le pinyin et le lexique.', [
     'Choisis le pinyin : toujours affiché, au toucher, ou masqué.',
     'Touche n’importe quel mot pour l’entendre et voir sa traduction. Les mots soulignés en pointillé sont dans tes cartes.',
     '« 🔊 Tout lire » ou « 🔊 paragraphe » pour écouter, puis réponds aux questions de compréhension.',
   ]],
   ['jeux', '#/jeux', 'Jeux', 'Pour réviser en s’amusant, quand tu as cinq minutes.', [
+    '« Pièges » : les mots qu’on confond (二 ou 两, 报 ou 做, 给 ou 对). Commence par là.',
     '« Chasse aux tons » : écoute une syllabe et trouve son ton.',
     '« Paires », « Phrase en désordre » et « Éclair » (60 secondes) : bats ton record !',
   ]],

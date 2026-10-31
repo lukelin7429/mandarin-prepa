@@ -65,6 +65,15 @@ def main():
         add(tok_text(p["zh"]))
     for t in c["tones"]:
         add(t["h"])
+    for d in c["drills"]:
+        add(d["w"])
+        add(tok_text(d["ex"]))
+    for u in c["usage"]:
+        add(tok_text(u["full"]))
+    for w in c["writing"]:
+        for k in ("q", "zh", "model"):
+            if isinstance(w.get(k), list):
+                add(tok_text(w[k]))
     for extra in ["你好，我们开始吧！", "高考是中国最重要的考试之一。"]:
         add(extra)
 

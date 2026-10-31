@@ -4,6 +4,7 @@ import { S, save, log } from '../store.js';
 import { sentences } from '../sentences.js';
 
 const GAMES = [
+  ['usage', '错', 'Pièges', 'Le bon mot : 二 ou 两, 报 ou 做, 给 ou 对…'],
   ['tons', '声', 'Chasse aux tons', 'Écoute une syllabe et trouve son ton.'],
   ['paires', '对', 'Paires', 'Associe chaque mot à sa traduction, le plus vite possible.'],
   ['phrase', '句', 'Phrase en désordre', 'Remets les mots dans le bon ordre.'],
@@ -15,7 +16,8 @@ export default function games(el, { content, params }) {
   let timers = [];
   const clean = () => { timers.forEach(clearInterval); timers = []; };
   const g = params[0];
-  if (g === 'tons') tones();
+  if (g === 'usage') usage();
+  else if (g === 'tons') tones();
   else if (g === 'paires') pairs();
   else if (g === 'phrase') order();
   else if (g === 'eclair') rush();
@@ -42,6 +44,39 @@ export default function games(el, { content, params }) {
       h('div.row', { style: { justifyContent: 'center' } },
         h('button.btn.primary', { onclick: again }, 'Rejouer'),
         h('a.btn', { href: '#/jeux' }, 'Autres jeux'))));
+  }
+
+  // --- Usage traps ------------------------------------------------------
+  function usage() {
+    const items = shuffle(content.usage).slice(0, 10);
+    let i = 0, score = 0;
+    const show = () => {
+      if (i >= items.length) {
+        const rec = best('usage', score);
+        return end(score >= 8 ? '太好了！' : '加油！', `${score} / ${items.length}${rec ? ' — nouveau record !' : ''}`, usage);
+      }
+      const it = items[i];
+      const full = tokText(it.full);
+      const next = h('button.btn.primary.block', { hidden: true, onclick: () => { i++; show(); } }, 'Suivant →');
+      const why = h('div', { hidden: true },
+        h('p.hz', { lang: 'zh-CN', style: { fontSize: '20px' } }, full),
+        h('p.small.pin', it.full.filter((t) => !t.k).map((t) => t.p).join(' ')),
+        h('p', it.why));
+      const opts = shuffle([it.a, ...it.wrong]);
+      const btns = opts.map((o) => h('button.choice', {
+        onclick: () => {
+          btns.forEach((b, j) => { b.disabled = true; if (opts[j] === it.a) b.classList.add('ok'); });
+          if (o === it.a) score++; else btns[opts.indexOf(o)].classList.add('bad');
+          why.hidden = false; next.hidden = false;
+          speak(full);
+        },
+      }, zh(o)));
+      el.replaceChildren(
+        h('div.row.spread.small.muted', h('span', `${i + 1} / ${items.length}`), h('span', `Score : ${score}`)),
+        h('div.card.stack', h('p.hz', { lang: 'zh-CN', style: { fontSize: '22px' } }, it.q), h('div.choices', btns), why),
+        next);
+    };
+    show();
   }
 
   // --- Tones -------------------------------------------------------------

@@ -24,6 +24,7 @@ export default function exam(el) {
         h('tr', h('td', h('b', 'Résumé analytique comparatif'), h('div.small.muted', 'Comparer les documents en réponse à une question, sans donner son avis ni paraphraser.')), h('td', '250 caractères'), h('td', '30 %')),
         h('tr', h('td', h('b', 'Essai argumenté'), h('div.small.muted', 'Répondre à une question liée au dossier, avec des exemples culturels, civilisationnels ou historiques du monde sinophone. Parfois sous forme de lettre, discours, rapport…')), h('td', '350 caractères'), h('td', '50 %')),
         h('tr', h('td', h('b', 'Thème'), h('div.small.muted', 'Traduire en chinois un extrait du texte français.')), h('td', '150 mots'), h('td', '20 %'))),
+      h('p', 'Sujet 2026 : compagnie et intelligence artificielle (陪玩, AI陪伴, robots de compagnie, jouets IA). Le niveau de vocabulaire est élevé, mais les mots difficiles sont expliqués en note.'),
       h('p.small.muted', 'Longueurs du sujet de chinois 2026 ; marge acceptée : ±10 %. La version a disparu depuis 2023.')),
     h('div.card',
       h('h2', 'Écrit Ecricome — LV2, 3 h'),

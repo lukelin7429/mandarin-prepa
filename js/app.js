@@ -11,6 +11,7 @@ import games from './views/games.js';
 import exam from './views/exam.js';
 import progress from './views/progress.js';
 import guide from './views/guide.js';
+import writing from './views/writing.js';
 import { maybeShowTour } from './tour.js';
 
 const routes = {
@@ -23,6 +24,7 @@ const routes = {
   jeux: [games, 'Jeux', 'home'],
   examen: [exam, 'Le concours', 'home'],
   progres: [progress, 'Progrès et réglages', 'home'],
+  ecrit: [writing, 'Écrit', 'home'],
   guide: [guide, 'Mode d’emploi', 'home'],
 };
 

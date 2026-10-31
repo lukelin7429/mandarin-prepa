@@ -7,7 +7,7 @@ const defaults = () => ({
   colles: [],     // colle history (no audio)
   read: {},       // text id -> { done: date, quiz: score }
   games: {},      // game id -> best score
-  settings: { rate: 0.85, voice: '', newPerDay: 10, pinyin: 'tap', theme: 'auto', cardMode: 'zh' },
+  settings: { rate: 0.85, voice: '', newPerDay: 10, pinyin: 'on', theme: 'auto', cardMode: 'zh' },
   created: Date.now(),
 });
 

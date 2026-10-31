@@ -96,6 +96,10 @@ FIXED = {
     "中国": "Zhōngguó", "北京": "Běijīng", "上海": "Shànghǎi", "云南": "Yúnnán",
     "大理": "Dàlǐ", "海南": "Hǎinán", "法国": "Fǎguó", "伦敦": "Lúndūn",
     "温迪": "Wēndí", "彼得": "Bǐdé", "胡克": "Húkè", "永无岛": "Yǒngwú Dǎo",
+    "心理辅导": "xīnlǐ fǔdǎo", "紧急状态": "jǐnjí zhuàngtài", "睡眠不足": "shuìmián bùzú",
+    "独生子女": "dúshēng zǐnǚ", "兄弟姐妹": "xiōngdì jiěmèi", "全家人": "quán jiā rén", "上课外班": "shàng kèwàibān",
+    "重点中学": "zhòngdiǎn zhōngxué", "虎爸虎妈": "hǔbà hǔmā", "望子成龙": "wàngzǐ chénglóng", "望女成凤": "wàngnǚ chéngfèng",
+    "倒闭": "dǎobì", "找不到": "zhǎo bu dào", "受累": "shòulèi", "学生们": "xuéshengmen", "消息": "xiāoxi", "早上": "zǎoshang", "中国人": "Zhōngguórén", "考不上": "kǎo bu shàng", "努力学习": "nǔlì xuéxí", "学习努力": "xuéxí nǔlì", "随时": "suíshí", "不是": "bú shì", "并不是": "bìng bú shì",
     "印第安人": "Yìndì'ānrén",
 }
 VOWEL_START = re.compile(r"^[aoeāáǎàōóǒòēéěè]")
@@ -234,12 +238,16 @@ def main():
 
     colles = []
     for c in src.COLLES:
-        paras = parse_body(c["body"])
+        if c.get("from_text"):
+            paras = next(t["paras"] for t in texts if t["id"] == c["from_text"])
+        else:
+            paras = parse_body(c["body"])
         for p in paras:
             for tok in p:
                 add_vocab(tok, c["id"])
         colles.append({
             "id": c["id"],
+            "from_text": c.get("from_text"),
             "title": parse_line(c["title"]),
             "title_fr": c["title_fr"],
             "paras": paras,
@@ -262,8 +270,26 @@ def main():
         num = pinyin(h, style=Style.TONE3)[0][0]
         tones.append({"h": h, "p": auto_pinyin(h), "t": int(num[-1]) if num[-1].isdigit() else 5, "fr": fr})
 
+    drills = [{"w": w, "p": auto_pinyin(w), "fr": fr, "ex": parse_line(ex)} for w, fr, ex in src.DRILLS]
+    usage = []
+    for q, a, wrong, why in src.USAGE:
+        usage.append({"q": q.replace(" ", ""), "a": a, "wrong": wrong, "why": why,
+                      "full": parse_line(q.replace("＿", a))})
+    writing = []
+    for w in src.WRITING:
+        item = dict(w)
+        for k in ("q", "zh"):
+            if k in item:
+                item[k] = parse_line(item[k])
+        if item["kind"] == "theme":
+            item["model"] = parse_line(item["model"])
+        writing.append(item)
+
     os.makedirs(OUT, exist_ok=True)
     data = {
+        "drills": drills,
+        "usage": usage,
+        "writing": writing,
         "version": 1,
         "texts": texts,
         "colles": colles,
